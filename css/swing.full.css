@@ -1,0 +1,334 @@
+﻿.tile-group {
+    float: left;
+    margin-left: 1.5%;
+    position: relative;
+}
+
+.mtOperateImg {
+    position: absolute;
+    top: 10%;
+}
+
+.page {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: -ms-radial-gradient(center, aqua, black);
+    background: -webkit-radial-gradient(center, aqua, black);
+    background: -moz-radial-gradient(center, aqua, black);
+    /*background:-webkit-linear-gradient(top,#555, #222 );*/
+    /*-webkit-gradient(linear,0% 0%, 0% 100%,from(#fff),to(#000) )*/
+}
+
+.mtAppName {
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+    color: #fff;
+    clear: both;
+}
+
+.mtAppTitle {
+    position: relative;
+}
+
+.sceneName {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    color: #fff;
+    clear: both;
+}
+
+.layoutName {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 100%;
+    color: #ddd;
+    padding-top: 5%;
+    padding-left: 5%;
+    clear: both;
+}
+
+.tile-group {
+    float: left;
+    width: 30%;
+    height: 50%;
+}
+
+.tiles {
+    width: 100%;
+    height: 88%;
+}
+
+.sceneTitle {
+    height: 12%;
+    position: relative;
+}
+
+.sceneName {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.mtSceneToolBar {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.mtSceneToolBarItem {
+    position: relative;
+    float: left;
+    margin-top: 2%;
+    width: 10%;
+    height: 60%;
+}
+
+.mtLayoutToolBar {
+    float: left;
+    margin-right: 5%;
+    position: relative;
+    width: 95%;
+    height: 16%;
+    z-index: 1;
+}
+
+.mtLayoutToolBarItem {
+    position: relative;
+    float: right;
+    margin-top: 5%;
+    width: 16%;
+    height: 98%;
+}
+
+
+
+
+
+.layoutNameLarger {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    color: #fff;
+    clear: both;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.swingHide {
+    display: none;
+}
+
+.bottombarTab {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 6%;
+    list-style: none;
+    float: left;
+    display: block;
+    height: 100%;
+    text-align: center;
+    border: solid 1px;
+    color: #fff;
+    background-color: #111;
+}
+
+    .bottombarTab > div {
+        height: 100%;
+        cursor: pointer;
+        word-wrap: break-word;
+    }
+
+.swingTempPos {
+    width: 100%;
+    height: 100%;
+}
+
+.swingInputDiv {
+    border-radius: .5em;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
+
+.swingBlockItem {
+    border-radius: 0.5em;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    background: rgba(168,168, 168, 1);
+  
+    position: relative;
+}
+
+.swingAEMItem {
+    border-radius: .5em;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    background: rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.swingInputDiv label {
+    margin-left: 6px;
+}
+
+.swingSelected {
+}
+
+.btbetc {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: 100%;
+    position: absolute;
+    right: 8px;
+    text-decoration: none;
+    top: 0px;
+    text-align: right;
+    z-index: 1;
+}
+
+/*.divLoading {
+    z-index: 99999;
+    background-color: transparent;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    margin-left: 0%;
+}*/
+
+/*.swingModalDiv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top:-16.5%;
+    margin-left:-33%;
+}*/
+
+.swingGridTable {
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+
+
+.swingBottomBarWrap {
+    padding-left: .5%;
+}
+
+.swingBottomBar {
+    height: 10%;
+}
+
+.swingLabel {
+    cursor: pointer;
+}
+/*经典内部float，外部不随着大小改变BUG*/
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clear-fix{zoom:1}
+
+.dataSetManagerLayout {
+    width: 0%;
+    height: 98%;
+    float: left;
+    background-image: linear-gradient( #fffadf, #fff3a5);
+    border-radius: 5px;
+}
+
+.swingDataSetManager .dsmTitle {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    height: auto;
+    border: solid 1px #f7c942;
+    border-radius: 5px;
+    margin: 2px;
+    color: #111;
+}
+
+
+
+.swingDataSetManager .dsmTitle .dsmTitleLabel {
+    margin: 8px;
+}
+
+.swingDataSetManager .dsmContent {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: auto;
+    border: solid 1px #f7c942;
+    border-radius: 5px;
+    margin: 2px;
+    color: #111;
+    word-wrap: break-word;
+}
+
+.swingPanel {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+
+.swingLayout {
+    height: 100%;
+    width: 100%;
+}
+
+.carBg {
+    background-image: url('images/Apps/4.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.noSelect {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.noDrag {
+    -webkit-user-drag: none;
+}
+
+
+
+.swingPanelWrap {
+    position:relative;
+     width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.swingGridTable {
+position:relative;
+float:left;
+}
+.swingLoading {
+}
+
+.swingMaskLayer {
+}
+
+.swingHandle {
+position:relative;
+}
+
+.swingBlockTopBar {
+/*height:20%;*/
+}

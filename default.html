@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/jqueryMobile/1.3/themes/default/jquery.mobile-1.3.1.css" rel="stylesheet" />
+    <link href="css/swing.full.css" rel="stylesheet" />
+
+    <link href="../css/jsonEditor/jsoneditor-min.css" rel="stylesheet" />
+    <link href="../css/jsonEditor/app-min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page" style="overflow: hidden;">
+        <div id="DataSetManagerLayout" class="swingHide dataSetManagerLayout">
+            <div id="DataSetManager"></div>
+        </div>
+        <div class="swingContain" style="width: 100%; height: 90%; float: left;">
+            <div id="MetroContain" class="clear-fix" style="width: 100%; height: 100%; float: left;">
+                <div class="mtAppTitle" style="height: 10%">
+                </div>
+                <div class="main-content panorama clear-fix" style="height: 90%;">
+                    <div class="content-wrapper tiles blue clear-fix" style="height: 100%">
+                    </div>
+                </div>
+            </div>
+            <div id="LayoutsContain" class="swingHide" style="width: 100%; height: 100%; overflow: hidden;">
+            </div>
+        </div>
+        <div id="Bottombar" class="bottombar" style="position: absolute; height: 10%; width: 100%; background: #111; bottom: 0px; float: left; z-index: 1;">
+            <div id="BottombarTabs" data-role="footer" class="ui-bar ui-footer ui-bar-a" role="contentinfo">
+                <a href="#" id="tabHome" data-icon="plus" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-left"><span class="ui-btn-inner"><span class="ui-btn-text">主菜单</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+            </div>
+            <div id="BtbEtc" style="width: 5%; float: left;">
+                <a class="btbetc">...</a>
+            </div>
+        </div>
+    </div>
+    <!--配置文件-->
+    <script src="config/config.js"></script>
+
+    <!--类库-->
+    <script src="../js/utility/Utility.js"></script>
+    <script src="../js/jquery/jquery-1.9.1.js"></script>
+    <script src="../js/fastclick/fastclick.js"></script>
+    <script src="../js/jqueryUI/jquery-ui-1.9.2.min.js"></script>
+
+    <script src="../js/jsonEditor/jsoneditor-min.js"></script>
+    <script src="../js/jsonEditor/app-min.js"></script>
+    <!--实体类、模拟数据-->
+    <script src="models/Models.js"></script>
+    <script src="data/demo.js"></script>
+
+    <!--面板插件-->
+    <script src="js/liveTile/liveTile.js"></script>
+    <script src="js/itemSelector/itemSelector.js"></script>
+    <script src="js/swingDivMenu/swingDivMenu.js"></script>
+    <script src="js/swingDefaultHeader/swingDefaultHeader.js"></script>
+    <script src="js/swingGrid/swingGrid.js"></script>
+    <script src="js/swingDefaultFooter/swingDefaultFooter.js"></script>
+    <script src="js/swingInputs/swingInputs.js"></script>
+    <script src="js/swingTitleMenu/swingTitleMenu.js"></script>
+    <script src="js/swingLogin/swingLogin.js"></script>
+    <script src="js/swingDataSetManager/swingDataSetManager.js"></script>
+    <script src="js/swingAdviceEnticeMenu/swingAdviceEnticeMenu.js"></script>
+    <script src="js/swingAdviceEnticeContentA/swingAdviceEnticeContentA.js"></script>
+    <script src="js/swingConfiger/swingConfiger.js"></script>
+    <!--核心功能组件-->
+    <script src="js/Managers/ManagerCore.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            FastClick.attach(document.body);
+            var roleID = Diablo.getQueryString('roleID');
+            LM.roleID = roleID;
+            if (config.IsServerData && config.IsUpdateServer) {
+                AsynDataToServer();
+            }
+
+            if (false) {
+                for (var i in layoutDemo2_1) {
+                    var cloneJson = Diablo.cloneJSON(layoutDemo2_1[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1007', 'RM', '面板', '更新', '', '', '', cloneJson, ''));
+                }
+            }
+            function AsynDataToServer() {
+                for (var i in layoutDemoLogin) {
+                    var cloneJson = Diablo.cloneJSON(layoutDemoLogin[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1007', 'RM', '面板', '更新', '', '', '', cloneJson, ''));
+                }
+
+                for (var i in layouts) {
+                    for (var j in layouts[i]) {
+                        var cloneJson = Diablo.cloneJSON(layouts[i][j]);
+                        delete cloneJson.items;
+                        var s_data = JSON.stringify(cloneJson);
+                        MM.sendMsg.call(this, null, new Message('APP', '1007', 'RM', '面板', '更新', '', '', '', cloneJson, ''));
+                    }
+                }
+
+                for (var i in layoutDemoLogin) {
+                    var cloneJson = Diablo.cloneJSON(layoutDemoLogin[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1007', 'RM', '面板', '更新', '', '', '', cloneJson, ''));
+                }
+
+                for (var i in layoutDemoDsManager) {
+                    var cloneJson = Diablo.cloneJSON(layoutDemoDsManager[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1007', 'RM', '面板', '更新', '', '', '', cloneJson, ''));
+                }
+
+                for (var i in scene1Layouts) {
+                    var cloneJson = Diablo.cloneJSON(scene1Layouts[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1006', 'RM', '布局', '更新', '', '', '', cloneJson, ''));
+                }
+                for (var i in scene2Layouts) {
+                    var cloneJson = Diablo.cloneJSON(scene2Layouts[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1006', 'RM', '布局', '更新', '', '', '', cloneJson, ''));
+                }
+                for (var i in scene3Layouts) {
+                    var cloneJson = Diablo.cloneJSON(scene3Layouts[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1006', 'RM', '布局', '更新', '', '', '', cloneJson, ''));
+                }
+
+                for (var i in scene4Layouts) {
+                    var cloneJson = Diablo.cloneJSON(scene4Layouts[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1006', 'RM', '布局', '更新', '', '', '', cloneJson, ''));
+                }
+                for (var i in role2Demo) {
+                    var cloneJson = Diablo.cloneJSON(role2Demo[i]);
+                    delete cloneJson.items;
+                    var s_data = JSON.stringify(cloneJson);
+                    MM.sendMsg.call(this, null, new Message('APP', '1005', 'RM', '场景', '更新', '', '', '', cloneJson, ''));
+                }
+            }
+            //初始化APP命令
+            MM.sendMsg.call(this, null, new Message('APP', '9001', 'LM', roleID, '', '', '', '', '', ''));
+            LM.initEditBars();
+            LM.initAppbar();
+        })
+    </script>
+
+
+</body>
+
+</html>
